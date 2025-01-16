@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "123761306993",
+    "project_id": "e-comhub",
+    "storage_bucket": "e-comhub.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123761306993:android:fd5993413d4b05c01b5ad0",
+        "android_client_info": {
+          "package_name": "com.example.flutter_eommerce_application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdzDZpOpKsxiexoEOCtRkKbkbxIwoPQto"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
