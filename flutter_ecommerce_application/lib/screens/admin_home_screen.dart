@@ -30,61 +30,115 @@ class AdminHomeScreen extends StatelessWidget {
         backgroundColor: Colors.blueAccent,
       ),
       drawer: CustomDrawer(), // Use the reusable CustomDrawer
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            childAspectRatio: 3 / 4,
-          ),
-          itemCount: productImages.length, // Number of items (images)
-          itemBuilder: (context, index) {
-            return Card(
-              elevation: 4,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Column(
-                children: [
-                  Expanded(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
-                      child: Image.asset(
-                        productImages[index], // Use asset image
-                        fit: BoxFit.cover,
-                        width: double.infinity,
-                      ),
-                    ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Welcome Section
+          Container(
+            width: double.infinity,
+            color: Colors.blueAccent,
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Welcome, Ripa!',
+                  style: TextStyle(
+                    fontSize: 24,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'Here is an overview of your products:',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white70,
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          SizedBox(height: 16),
+
+          // Dashboard Title
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              'Product Overview',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+
+          SizedBox(height: 8),
+
+          // Grid of Products
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                  childAspectRatio: 3 / 4,
+                ),
+                itemCount: productImages.length, // Number of items (images)
+                itemBuilder: (context, index) {
+                  return Card(
+                    elevation: 4,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                     child: Column(
                       children: [
-                        Text(
-                          productNames[index], // Display product name from the list
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
+                        Expanded(
+                          child: ClipRRect(
+                            borderRadius:
+                                BorderRadius.vertical(top: Radius.circular(10)),
+                            child: Image.asset(
+                              productImages[index], // Use asset image
+                              fit: BoxFit.cover,
+                              width: double.infinity,
+                            ),
                           ),
                         ),
-                        SizedBox(height: 5),
-                        Text(
-                          '\$${(index + 1) * 100}', // Example price (adjust as needed)
-                          style: TextStyle(
-                            color: Colors.green,
-                            fontWeight: FontWeight.bold,
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                productNames[index], // Display product name
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                              SizedBox(height: 5),
+                              Text(
+                                '\$${(index + 1) * 100}', // Example price
+                                style: TextStyle(
+                                  color: Colors.green,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
                     ),
-                  ),
-                ],
+                  );
+                },
               ),
-            );
-          },
-        ),
+            ),
+          ),
+        ],
       ),
     );
   }

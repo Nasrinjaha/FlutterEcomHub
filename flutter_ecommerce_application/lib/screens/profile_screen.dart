@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_application/widgets/custom_drawer.dart';
+import 'package:flutter_ecommerce_application/screens/admin_home_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   @override
@@ -55,7 +56,9 @@ class ProfileScreen extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).pop();
+                 Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => AdminHomeScreen()),
+                );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blueAccent,

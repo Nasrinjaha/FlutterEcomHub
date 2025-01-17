@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_application/widgets/custom_drawer.dart';
+import 'package:flutter_ecommerce_application/screens/add_new_products.dart';
+import 'package:flutter_ecommerce_application/screens/all_products.dart';
+import 'package:flutter_ecommerce_application/screens/edit_products.dart';
+import 'package:flutter_ecommerce_application/screens/block_products.dart'; 
+
 class ProductManagementScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -17,10 +22,12 @@ class ProductManagementScreen extends StatelessWidget {
             // View All Products Container
             GestureDetector(
               onTap: () {
-                // Navigate to View All Products Page
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => AllProductsScreen()),
+                );
               },
               child: Container(
-                height: 150,
+                height: 120,  // Reduced height
                 decoration: BoxDecoration(
                   color: Colors.blueAccent,
                   borderRadius: BorderRadius.circular(15),
@@ -44,14 +51,16 @@ class ProductManagementScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 15),  // Adjusted space between boxes
             // Add New Product Container
             GestureDetector(
               onTap: () {
-                // Navigate to Add New Product Page
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => ProductForm()),
+                );
               },
               child: Container(
-                height: 150,
+                height: 120,  // Reduced height
                 decoration: BoxDecoration(
                   color: Colors.green,
                   borderRadius: BorderRadius.circular(15),
@@ -75,14 +84,16 @@ class ProductManagementScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 15),  // Adjusted space between boxes
             // Edit/Delete Product Container
             GestureDetector(
               onTap: () {
-                // Navigate to Edit/Delete Product Page
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => EditProductsScreen()),
+                );
               },
               child: Container(
-                height: 150,
+                height: 120,  // Reduced height
                 decoration: BoxDecoration(
                   color: Colors.redAccent,
                   borderRadius: BorderRadius.circular(15),
@@ -97,6 +108,39 @@ class ProductManagementScreen extends StatelessWidget {
                 child: Center(
                   child: Text(
                     'Edit/Delete Products',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 15),  // Adjusted space between boxes
+            // Soft Deleted Products Container
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => SoftDeletedProductsScreen()),
+                );
+              },
+              child: Container(
+                height: 120,  // Reduced height
+                decoration: BoxDecoration(
+                  color: Colors.orangeAccent,
+                  borderRadius: BorderRadius.circular(15),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black12,
+                      blurRadius: 5,
+                      offset: Offset(0, 5),
+                    ),
+                  ],
+                ),
+                child: Center(
+                  child: Text(
+                    'Blocked Products',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
