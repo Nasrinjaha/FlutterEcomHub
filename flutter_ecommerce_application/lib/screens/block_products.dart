@@ -7,6 +7,8 @@ class SoftDeletedProductsScreen extends StatelessWidget {
       .where('softDelete', isEqualTo: true)
       .snapshots();
 
+  const SoftDeletedProductsScreen({super.key});
+
   Future<void> _restoreData(String id) async {
     await FirebaseFirestore.instance.collection('products').doc(id).update({
       'softDelete': false,
@@ -22,21 +24,21 @@ class SoftDeletedProductsScreen extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Delete Permanently'),
-          content: Text('Are you sure you want to permanently delete this product?'),
+          title: const Text('Delete Permanently'),
+          content: const Text('Are you sure you want to permanently delete this product?'),
           actions: <Widget>[
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             TextButton(
               onPressed: () {
                 _hardDeleteData(id); // Proceed with deletion
                 Navigator.of(context).pop(); // Close the dialog
               },
-              child: Text('Delete'),
+              child: const Text('Delete'),
             ),
           ],
         );
@@ -48,7 +50,7 @@ class SoftDeletedProductsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Deleted Products',
           style: TextStyle(
             fontSize: 24,
@@ -62,7 +64,7 @@ class SoftDeletedProductsScreen extends StatelessWidget {
         stream: softDeletedStream,
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }
           final docs = snapshot.data!.docs;
           return ListView.builder(
@@ -79,13 +81,13 @@ class SoftDeletedProductsScreen extends StatelessWidget {
                       onPressed: () {
                         _restoreData(doc.id);
                       },
-                      icon: Icon(Icons.restore, color: Colors.green),
+                      icon: const Icon(Icons.restore, color: Colors.green),
                     ),
                     IconButton(
                       onPressed: () {
                         _showDeleteConfirmationDialog(context, doc.id);
                       },
-                      icon: Icon(Icons.delete, color: Colors.red),
+                      icon: const Icon(Icons.delete, color: Colors.red),
                     ),
                   ],
                 ),

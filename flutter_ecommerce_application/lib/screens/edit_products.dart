@@ -46,7 +46,7 @@ class _EditProductsScreenState extends State<EditProductsScreen> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('$name deleted'),
-        duration: Duration(seconds: 3),
+        duration: const Duration(seconds: 3),
         action: SnackBarAction(
           label: 'Undo',
           onPressed: () async {
@@ -63,7 +63,7 @@ class _EditProductsScreenState extends State<EditProductsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'All Products',
           style: TextStyle(
             fontSize: 24,
@@ -77,7 +77,7 @@ class _EditProductsScreenState extends State<EditProductsScreen> {
         stream: stremContent,
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }
@@ -96,13 +96,13 @@ class _EditProductsScreenState extends State<EditProductsScreen> {
                       onPressed: () {
                         _showDialog(context, index, content['name'], content['description'], content['price'], doc.id);
                       },
-                      icon: Icon(Icons.edit),
+                      icon: const Icon(Icons.edit),
                     ),
                     IconButton(
                       onPressed: () {
                         _softDeleteProduct(doc.id, content['name']);
                       },
-                      icon: Icon(Icons.delete),
+                      icon: const Icon(Icons.delete),
                     ),
                   ],
                 ),
@@ -119,16 +119,16 @@ class _EditProductsScreenState extends State<EditProductsScreen> {
     TextEditingController nameController = TextEditingController(text: contentName);
     TextEditingController descriptionController = TextEditingController(text: contentDescription);
     TextEditingController priceController = TextEditingController(text: contentPrice.toString());
-    final _formKey = GlobalKey<FormState>();
+    final formKey = GlobalKey<FormState>();
 
     showDialog(
       context: (context),
       builder: (context) {
         return AlertDialog(
-          title: Text('Edit Product'),
+          title: const Text('Edit Product'),
           content: Form(
-            key: _formKey,
-            child: Container(
+            key: formKey,
+            child: SizedBox(
               width: double.minPositive,
               height: 250,
               child: Column(
@@ -196,16 +196,16 @@ class _EditProductsScreenState extends State<EditProductsScreen> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text("Cancel"),
+              child: const Text("Cancel"),
             ),
             ElevatedButton(
               onPressed: () async {
-                if (_formKey.currentState!.validate()) {
+                if (formKey.currentState!.validate()) {
                   // Check for duplicate product name before updating
                   bool isDuplicate = await _isDuplicateProductName(nameController.text);
                   if (isDuplicate) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
+                      const SnackBar(
                         content: Text('This product name is already in use!'),
                       ),
                     );
@@ -216,7 +216,7 @@ class _EditProductsScreenState extends State<EditProductsScreen> {
                   }
                 }
               },
-              child: Text("Save"),
+              child: const Text("Save"),
             ),
           ],
         );

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_application/screens/admin_home_screen.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -39,7 +41,7 @@ class _LoginPageState extends State<LoginPage> {
         );
 
         // Show success message
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Login successful!")));
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Login successful!")));
 
         // Clear the controllers after successful login
         emailController.clear();
@@ -62,11 +64,11 @@ class _LoginPageState extends State<LoginPage> {
       prefixIcon: Icon(icon, color: const Color.fromARGB(255, 0, 0, 0)),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),
-        borderSide: BorderSide(color: const Color.fromARGB(255, 0, 0, 0), width: 1.5),
+        borderSide: const BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 1.5),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),
-        borderSide: BorderSide(color: const Color.fromARGB(255, 10, 10, 10), width: 2),
+        borderSide: const BorderSide(color: Color.fromARGB(255, 10, 10, 10), width: 2),
       ),
     );
   }
@@ -74,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Login Page"),
+      appBar: AppBar(title: const Text("Login Page"),
               backgroundColor: Colors.blueAccent),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -84,11 +86,11 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 "Login to Your Account",
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Email Field
               TextFormField(
                 controller: emailController,
@@ -103,7 +105,7 @@ class _LoginPageState extends State<LoginPage> {
                   return null;
                 },
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               // Password Field
               TextFormField(
                 controller: passwordController,
@@ -116,23 +118,23 @@ class _LoginPageState extends State<LoginPage> {
                   return null;
                 },
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: isLoggingIn ? null : _login,
                 style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
+                  padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
                 child: isLoggingIn
-                    ? CircularProgressIndicator(color: Colors.white)
-                    : Text(
+                    ? const CircularProgressIndicator(color: Colors.white)
+                    : const Text(
                         "Login",
                         style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                       ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Row(
               //   mainAxisAlignment: MainAxisAlignment.center,
               //   children: [

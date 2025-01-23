@@ -6,13 +6,15 @@ import 'package:flutter_ecommerce_application/screens/product_management_screen.
 import 'package:flutter_ecommerce_application/screens/admin_home_screen.dart'; // Import AdminHomeScreen
 
 class CustomDrawer extends StatelessWidget {
+  const CustomDrawer({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          DrawerHeader(
+          const DrawerHeader(
             decoration: BoxDecoration(
               color: Colors.blueAccent,
             ),
@@ -43,8 +45,8 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.home),
-            title: Text('Admin Home'),
+            leading: const Icon(Icons.home),
+            title: const Text('Admin Home'),
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => AdminHomeScreen()), // Navigate to AdminHomeScreen
@@ -52,8 +54,8 @@ class CustomDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.person),
-            title: Text('My Profile'),
+            leading: const Icon(Icons.person),
+            title: const Text('My Profile'),
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => ProfileScreen()),
@@ -61,8 +63,8 @@ class CustomDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.inventory),
-            title: Text('Product Management'),
+            leading: const Icon(Icons.inventory),
+            title: const Text('Product Management'),
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => ProductManagementScreen()),
@@ -70,22 +72,22 @@ class CustomDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.shopping_cart),
-            title: Text('Order Management'),
+            leading: const Icon(Icons.shopping_cart),
+            title: const Text('Order Management'),
             onTap: () {
               // Navigate to Order Management Screen
             },
           ),
           ListTile(
-            leading: Icon(Icons.people),
-            title: Text('User Management'),
+            leading: const Icon(Icons.people),
+            title: const Text('User Management'),
             onTap: () {
               // Navigate to User Management Screen
             },
           ),
           ListTile(
-            leading: Icon(Icons.logout),
-            title: Text('Logout'),
+            leading: const Icon(Icons.logout),
+            title: const Text('Logout'),
             onTap: () async {
               await FirebaseAuth.instance.signOut();
               Navigator.of(context).push(

@@ -22,11 +22,13 @@ class AdminHomeScreen extends StatelessWidget {
     'Nike Air Force 1 Low',
   ];
 
+  const AdminHomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dashboard"),
+        title: const Text("Dashboard"),
         backgroundColor: Colors.blueAccent,
       ),
       drawer: CustomDrawer(), // Use the reusable CustomDrawer
@@ -37,8 +39,8 @@ class AdminHomeScreen extends StatelessWidget {
           Container(
             width: double.infinity,
             color: Colors.blueAccent,
-            padding: EdgeInsets.all(16.0),
-            child: Column(
+            padding: const EdgeInsets.all(16.0),
+            child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
@@ -61,11 +63,11 @@ class AdminHomeScreen extends StatelessWidget {
             ),
           ),
 
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
 
           // Dashboard Title
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
             child: Text(
               'Product Overview',
               style: TextStyle(
@@ -75,14 +77,14 @@ class AdminHomeScreen extends StatelessWidget {
             ),
           ),
 
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
 
           // Grid of Products
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
@@ -100,7 +102,7 @@ class AdminHomeScreen extends StatelessWidget {
                         Expanded(
                           child: ClipRRect(
                             borderRadius:
-                                BorderRadius.vertical(top: Radius.circular(10)),
+                                const BorderRadius.vertical(top: Radius.circular(10)),
                             child: Image.asset(
                               productImages[index], // Use asset image
                               fit: BoxFit.cover,
@@ -114,16 +116,16 @@ class AdminHomeScreen extends StatelessWidget {
                             children: [
                               Text(
                                 productNames[index], // Display product name
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                 ),
                                 textAlign: TextAlign.center,
                               ),
-                              SizedBox(height: 5),
+                              const SizedBox(height: 5),
                               Text(
                                 '\$${(index + 1) * 100}', // Example price
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: Colors.green,
                                   fontWeight: FontWeight.bold,
                                 ),

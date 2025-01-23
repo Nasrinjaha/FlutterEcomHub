@@ -3,11 +3,13 @@ import 'package:flutter_ecommerce_application/widgets/custom_drawer.dart';
 import 'package:flutter_ecommerce_application/screens/admin_home_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Profile'),
+        title: const Text('My Profile'),
         backgroundColor: Colors.blueAccent,
         centerTitle: true,
       ),
@@ -20,38 +22,38 @@ class ProfileScreen extends StatelessWidget {
             Center(
               child: CircleAvatar(
                 radius: 60,
-                backgroundImage: AssetImage('assets/images/profile.jpeg'), // Replace with your profile picture
+                backgroundImage: const AssetImage('assets/images/profile.jpeg'), // Replace with your profile picture
                 backgroundColor: Colors.grey[200],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Divider(
               thickness: 1,
               color: Colors.grey[300],
             ),
-            SizedBox(height: 10),
-            DetailTile(
+            const SizedBox(height: 10),
+            const DetailTile(
               icon: Icons.person,
               title: 'Name',
               value: 'Nasrin Ripa',
             ),
-            DetailTile(
+            const DetailTile(
               icon: Icons.email,
               title: 'Email',
               value: 'ripa@gmail.com',
             ),
-            DetailTile(
+            const DetailTile(
               icon: Icons.phone,
               title: 'Phone',
               value: '+1234567890', // Replace with admin's phone
             ),
-            DetailTile(
+            const DetailTile(
               icon: Icons.admin_panel_settings,
               title: 'Role',
               value: 'Administrator',
             ),
-            SizedBox(height: 30),
-            Spacer(),
+            const SizedBox(height: 30),
+            const Spacer(),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -62,12 +64,12 @@ class ProfileScreen extends StatelessWidget {
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blueAccent,
-                  padding: EdgeInsets.symmetric(vertical: 16),
+                  padding: const EdgeInsets.symmetric(vertical: 16),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                child: Text(
+                child: const Text(
                   'Back to Dashboard',
                   style: TextStyle(
                     fontSize: 18,
@@ -88,7 +90,7 @@ class DetailTile extends StatelessWidget {
   final String title;
   final String value;
 
-  const DetailTile({
+  const DetailTile({super.key, 
     required this.icon,
     required this.title,
     required this.value,
@@ -105,7 +107,7 @@ class DetailTile extends StatelessWidget {
             size: 30,
             color: Colors.blueAccent,
           ),
-          SizedBox(width: 15),
+          const SizedBox(width: 15),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -118,7 +120,7 @@ class DetailTile extends StatelessWidget {
               ),
               Text(
                 value,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: Colors.black87,

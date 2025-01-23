@@ -40,7 +40,7 @@ class _ProductFormState extends State<ProductForm> {
       bool isDuplicate = await _isDuplicateProduct(name);
       if (isDuplicate) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('A product with this name already exists!')),
+          const SnackBar(content: Text('A product with this name already exists!')),
         );
         return; // Stop further execution
       }
@@ -57,7 +57,7 @@ class _ProductFormState extends State<ProductForm> {
 
       // Show success message
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Product has been added successfully!")),
+        const SnackBar(content: Text("Product has been added successfully!")),
       );
 
       // Clear input fields
@@ -73,7 +73,7 @@ class _ProductFormState extends State<ProductForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Add New Product"),
+        title: const Text("Add New Product"),
         backgroundColor: Colors.blueAccent,
       ),
       drawer: CustomDrawer(),
@@ -86,7 +86,7 @@ class _ProductFormState extends State<ProductForm> {
             children: [
               TextFormField(
                 controller: nameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: "Product Name",
                   border: OutlineInputBorder(),
                 ),
@@ -100,7 +100,7 @@ class _ProductFormState extends State<ProductForm> {
               const SizedBox(height: 10.0),
               TextFormField(
                 controller: priceController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: "Price",
                   border: OutlineInputBorder(),
                 ),
@@ -118,7 +118,7 @@ class _ProductFormState extends State<ProductForm> {
               const SizedBox(height: 10.0),
               TextFormField(
                 controller: descriptionController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: "Description",
                   border: OutlineInputBorder(),
                 ),
@@ -133,7 +133,7 @@ class _ProductFormState extends State<ProductForm> {
               const SizedBox(height: 10.0),
               TextFormField(
                 controller: categoryController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: "Category",
                   border: OutlineInputBorder(),
                 ),
@@ -147,7 +147,7 @@ class _ProductFormState extends State<ProductForm> {
               const SizedBox(height: 10.0),
               TextFormField(
                 controller: brandController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: "Brand",
                   border: OutlineInputBorder(),
                 ),
@@ -161,12 +161,12 @@ class _ProductFormState extends State<ProductForm> {
               const SizedBox(height: 20.0),
               ElevatedButton(
                 onPressed: _saveData,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                ),
                 child: Text(
                   "Add Product",
                   style: TextStyle(color: Colors.white),
-                ),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
                 ),
               ),
               const SizedBox(height: 20.0),
@@ -174,12 +174,12 @@ class _ProductFormState extends State<ProductForm> {
                 onPressed: () {
                   Navigator.pop(context); // Navigate back to the previous screen
                 },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 212, 43, 9),
+                ),
                 child: Text(
                   "Go Back",
                   style: TextStyle(color: Colors.white),
-                ),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 212, 43, 9),
                 ),
               ),
             ],
