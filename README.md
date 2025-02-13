@@ -1,1 +1,1 @@
-![Project Screenshot](assets/add producst.png)
+![Project Screenshot](assets/add profile.png)
