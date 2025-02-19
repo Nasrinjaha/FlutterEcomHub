@@ -1,4 +1,4 @@
-Admin End:
+<h1>Admin End:</h1>
 
 <p align="center">
     <img src="https://github.com/user-attachments/assets/2094e914-66f5-483a-915f-23cb2ce9b8cb" width="45%">
@@ -16,7 +16,8 @@ Admin End:
 </p>
 
 
-Customer End:
+<h1>Customer End:</h1>
+
 
 ![WhatsApp Image 2025-02-19 at 11 57 37 PM](https://github.com/user-attachments/assets/407f0538-6268-4def-b821-3c2711cd8e17)
 ![WhatsApp Image 2025-02-19 at 11 57 37 PM (1)](https://github.com/user-attachments/assets/8a3a0c22-d140-49ce-9b15-f69ccb28cbb0)
@@ -25,7 +26,6 @@ Customer End:
 ![WhatsApp Image 2025-02-19 at 11 57 36 PM (2)](https://github.com/user-attachments/assets/84ad6f14-fa20-4880-b567-a67d582e1090)
 ![WhatsApp Image 2025-02-19 at 11 57 36 PM (1)](https://github.com/user-attachments/assets/436463e9-4625-41d2-88a8-d379f359a31c)
 ![WhatsApp Image 2025-02-19 at 11 57 35 PM](https://github.com/user-attachments/assets/91bfc193-6dea-4c0f-a2e0-fccc8968b03b)
-
 ![WhatsApp Image 2025-02-19 at 11 57 39 PM](https://github.com/user-attachments/assets/5acc64e7-cd0e-4002-b1cc-f444ab987e1d)
 ![WhatsApp Image 2025-02-19 at 11 57 39 PM (1)](https://github.com/user-attachments/assets/09555949-f424-45f4-9e10-f6daf9f9daad)
 ![WhatsApp Image 2025-02-19 at 11 57 38 PM](https://github.com/user-attachments/assets/03562558-d249-4518-91c8-d6ebec104425)
